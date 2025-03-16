@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './user-button.css';
+import { Image } from '../image/image';
 
 export const UserButton = () => {
   const [openOptions, setOpenOptions] = useState<boolean>(false);
@@ -8,10 +9,10 @@ export const UserButton = () => {
   const currentUser: boolean = true;
   return currentUser ? (
     <div className='userButton'>
-      <img src='general/noAvatar.png' alt='' />
-      <img
+      <Image path='general/noAvatar.png' alt='' />
+      <Image
         onClick={() => setOpenOptions((o) => !o)}
-        src='general/arrow.svg'
+        path='general/arrow.svg'
         alt=''
         className='arrow'
       />

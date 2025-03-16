@@ -1,3 +1,4 @@
+import { Image } from '../image/image';
 import './left-bar.css';
 
 export const LeftBar = () => {
@@ -5,27 +6,27 @@ export const LeftBar = () => {
     <div className='left-bar'>
       <div className='menuIcons'>
         <a href='' className='menuIcon'>
-          <img src='/general/logo.png' alt='' className='logo' />
+          <Image path='/general/logo.png' className='logo' />
         </a>
         <a href='' className='menuIcon'>
-          <img src='/general/home.svg' alt='' />
-        </a>
-
-        <a href='' className='menuIcon'>
-          <img src='/general/create.svg' alt='' />
+          <Image path='/general/home.svg' />
         </a>
 
         <a href='' className='menuIcon'>
-          <img src='/general/updates.svg' alt='' />
+          <Image path='/general/create.svg' />
         </a>
 
         <a href='' className='menuIcon'>
-          <img src='/general/messages.svg' alt='' />
+          <Image path='/general/updates.svg' />
+        </a>
+
+        <a href='' className='menuIcon'>
+          <Image path='/general/messages.svg' />
         </a>
       </div>
 
       <a href='' className='menuIcon'>
-        <img src='/general/settings.svg' alt='' />
+        <Image path='/general/settings.svg' />
       </a>
     </div>
   );

@@ -155,18 +155,6 @@ export const Gallery = () => {
       width: 1260,
       height: 1260,
     },
-    {
-      id: 26,
-      media: '/pins/pin26.jpeg',
-      width: 1260,
-      height: 1260,
-    },
-    {
-      id: 27,
-      media: '/pins/pin27.jpeg',
-      width: 1260,
-      height: 1260,
-    },
   ];
 
   return (
