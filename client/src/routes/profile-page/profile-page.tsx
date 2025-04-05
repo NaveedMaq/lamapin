@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import { Image } from '../../components/image/image';
 import './profile-page.css';
+import { Gallery } from '../../components/gallery/gallery';
+import { Collections } from '../../components/collections/collections';
 
 export const ProfilePage = () => {
+  const [type, setType] = useState<'saved' | 'created'>('saved');
   return (
     <div className='profilePage'>
-      <Image path='/general/noAvatar.png' />
+      <Image
+        className='profileImg'
+        path='/general/noAvatar.png'
+        w={'100'}
+        h={'100'}
+      />
       <h1 className='profileName'>John Doe</h1>
       <span className='profileUsername'>@johndoe</span>
       <div className='followCounts'>10 followers &middot; 20 followings</div>
@@ -20,9 +29,21 @@ export const ProfilePage = () => {
       </div>
 
       <div className='profileOptions'>
-        <span>Created</span>
-        <span>Saved</span>
+        <span
+          onClick={() => setType('created')}
+          className={type === 'created' ? 'active' : ''}
+        >
+          Created
+        </span>
+        <span
+          onClick={() => setType('saved')}
+          className={type === 'saved' ? 'active' : ''}
+        >
+          Saved
+        </span>
       </div>
+
+      {type === 'created' ? <Gallery /> : <Collections />}
     </div>
   );
 };
