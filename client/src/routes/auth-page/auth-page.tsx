@@ -4,7 +4,7 @@ import './auth-page.css';
 
 export const AuthPage = () => {
   const [isRegister, setIsRegister] = useState<boolean>(false);
-  const [error, setError] = useState<string>('');
+  const [error] = useState<string>('');
 
   return (
     <div className='authPage'>
