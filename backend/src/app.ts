@@ -7,6 +7,8 @@ import { connectDb } from './utils/connectDb';
 
 const app = express();
 
+app.use(express.json());
+
 app.use('/boards', boardRouter);
 app.use('/comments', commentRouter);
 app.use('/pins', pinRouter);
