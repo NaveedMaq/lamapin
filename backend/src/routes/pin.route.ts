@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import { test } from '../controllers/pin.controller';
+import { getPin, getPins } from '../controllers/pin.controller';
 
 const router = Router();
 
-router.get('/test', test);
+router.route('/').get(getPins);
+
+router.route('/:id').get(getPin);
 
 export default router;

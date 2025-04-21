@@ -10,17 +10,17 @@ export const GalleryItem = ({ item }: { item: TGalleryItem }) => {
       className='gallery-item'
       style={{ gridRowEnd: `span ${Math.ceil(item.height / 100)}` }}
     >
-      <Image path={item.media} w='375' />
+      <Image src={item.media} w='375' />
 
-      <Link to={`/pin/${item.id}`} className='overlay' />
+      <Link to={`/pin/${item._id}`} className='overlay' />
       <button className='saveButton'>Save</button>
 
       <div className='overlayIcons'>
         <button>
-          <Image path='/general/share.svg' />
+          <Image src='/general/share.svg' />
         </button>
         <button>
-          <Image path='/general/more.svg' />
+          <Image src='/general/more.svg' />
         </button>
       </div>
     </div>

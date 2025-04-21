@@ -2,7 +2,8 @@ import { IKImage } from 'imagekitio-react';
 import { MouseEventHandler } from 'react';
 
 type TImageProps = {
-  path: string;
+  path?: string;
+  src: string;
   alt?: string;
   className?: string;
   w?: string;
@@ -12,6 +13,7 @@ type TImageProps = {
 
 export const Image: React.FC<TImageProps> = ({
   path,
+  src,
   alt = '',
   className = '',
   w = '',
@@ -21,6 +23,7 @@ export const Image: React.FC<TImageProps> = ({
   return (
     <IKImage
       urlEndpoint={import.meta.env.VITE_URL_IK_ENDPOINT}
+      src={src}
       path={path}
       transformation={[
         {

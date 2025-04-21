@@ -3,9 +3,6 @@ import { Board } from '../models/board.model';
 import { Comment } from '../models/comment.model';
 import { Pin } from '../models/pin.model';
 import { User } from '../models/user.model';
-import { connectDb } from './connectDb';
-
-connectDb();
 
 const seedDB = async () => {
   await User.deleteMany({});

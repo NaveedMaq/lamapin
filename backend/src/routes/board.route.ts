@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { test } from '../controllers/board.controller';
+import { getUserBoards } from '../controllers/board.controller';
 
 const router = Router();
 
-router.get('/test', test);
+router.get('/:userId', getUserBoards);
 
 export default router;

@@ -8,21 +8,24 @@ export interface IComment extends Document {
   user: Schema.Types.ObjectId | IUser;
 }
 
-const commentSchema = new Schema<IComment>({
-  description: {
-    type: String,
-    required: true,
+const commentSchema = new Schema<IComment>(
+  {
+    description: {
+      type: String,
+      required: true,
+    },
+    pin: {
+      type: Schema.Types.ObjectId,
+      ref: 'Pin',
+      required: true,
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
   },
-  pin: {
-    type: Schema.Types.ObjectId,
-    ref: 'Pin',
-    required: true,
-  },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
 export const Comment = model<IComment>('Comment', commentSchema);
